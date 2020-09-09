@@ -21,10 +21,13 @@ jobs:
 
     runs-on: windows-latest
 
+    env:
+        ANDROID_HOME_SYMBOLIC: C:\android-sdk
+
     steps:
     - name: Install Emulator
-      run: powershell -executionpolicy bypass "& ${env:ANDROID_HOME}\tools\bin\sdkmanager --install emulator"
+      run: powershell -executionpolicy bypass "& ${env:ANDROID_HOME_SYMBOLIC}\tools\bin\sdkmanager --install emulator"
 
     - name: Accel Check
       shell: cmd
-      run: powershell -executionpolicy bypass "& ${env:ANDROID_HOME}\emulator\emulator -accel-check"
+      run: powershell -executionpolicy bypass "& ${env:ANDROID_HOME_SYMBOLIC}\emulator\emulator -accel-check"
