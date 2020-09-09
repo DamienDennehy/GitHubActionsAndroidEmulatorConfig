@@ -28,17 +28,8 @@ jobs:
     - name: Set Symlink Path
       run: New-Item -ItemType Junction -Path "${env:ANDROID_HOME_SYMBOLIC}" -Target "${env:ANDROID_HOME}"
 
-    - name: Display Sdk Contents
-      run: dir ${env:ANDROID_HOME_SYMBOLIC}
-
-    - name: Display Tools Contents
-      run: dir ${env:ANDROID_HOME_SYMBOLIC}\tools\bin
-
-    - name: SdkManager Exists
-      run: Test-Path ${env:ANDROID_HOME_SYMBOLIC}\tools\bin\sdkmanager.bat -PathType Leaf
-
     - name: Install Emulator
-      run: powershell -executionpolicy bypass "& ${env:ANDROID_HOME_SYMBOLIC}\tools\bin\sdkmanager --install emulator
+      run: powershell -executionpolicy bypass "& ${env:ANDROID_HOME_SYMBOLIC}\tools\bin\sdkmanager --install emulator"
 
     - name: File Exists
       run: Test-Path ${env:ANDROID_HOME_SYMBOLIC}\emulator\emulator.exe -PathType Leaf
