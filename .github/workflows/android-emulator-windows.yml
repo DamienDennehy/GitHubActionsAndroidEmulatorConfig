@@ -1,0 +1,36 @@
+name: Android Emulator Windows
+on:
+  # Manual Run.
+  workflow_dispatch:  
+  
+  # On a push to a branch or tag.
+  push:
+    branches: [ master ]
+
+  # On a PR to a branch or tag.
+  pull_request:
+    branches: [ master ]
+    
+  # On a release.
+  release:
+    types:
+      - published
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    env:
+        ANDROID_HOME_SYMBOLIC: C:\android-sdk
+
+    steps:
+    - name: Set Symlink Path
+      run: New-Item -ItemType Junction -Path "${env:ANDROID_HOME_SYMBOLIC}" -Target "${env:ANDROID_HOME}"
+
+    - name: Install Emulator
+      run: powershell -executionpolicy bypass "& ${env:ANDROID_HOME_SYMBOLIC}\tools\bin\sdkmanager --install emulator"
+
+    - name: Accel Check
+      shell: cmd
+      run: powershell -executionpolicy bypass "& ${env:ANDROID_HOME_SYMBOLIC}\emulator\emulator -accel-check"
