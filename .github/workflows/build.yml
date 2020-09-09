@@ -31,6 +31,9 @@ jobs:
     - name: Display Sdk Contents
       run: dir ${env:ANDROID_HOME_SYMBOLIC}
 
+    - name: Display Tools Contents
+      run: dir ${env:ANDROID_HOME_SYMBOLIC}\tools\bin
+
     - name: Install Emulator
       run: ${env:ANDROID_HOME_SYMBOLIC}\tools\bin\sdkmanager --install emulator
 
