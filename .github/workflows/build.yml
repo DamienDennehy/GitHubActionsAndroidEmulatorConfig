@@ -24,4 +24,4 @@ jobs:
     steps:
     - name: Accel Check
       run: | 
-        & "${env:ANDROID_HOME}\emulator\emulator" -accel-check
+        & "${env:ANDROID_HOME}\emulator\emulator.exe" -accel-check
