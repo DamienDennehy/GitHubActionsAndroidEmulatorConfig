@@ -22,5 +22,5 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: HAXM Check
-      run: sc query intelhaxm
+    - name: Accel Check
+      run: echo $ANDROID_HOME
