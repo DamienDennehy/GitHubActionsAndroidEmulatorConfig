@@ -1,4 +1,4 @@
-name: Build
+name: Android Emulator Windows
 on:
   # Manual Run.
   workflow_dispatch:  

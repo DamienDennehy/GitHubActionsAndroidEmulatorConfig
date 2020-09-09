@@ -1,4 +1,3 @@
-# GitHub Actions Android Emulator Config (Windows)
+# GitHub Actions Testing
 
-This is a very simple GitHub Action used to install an Android Emulator to a Windows Virtual Machine on GitHub Actions.
-Note that this is work in progress as GitHub Actions Hardware Acceleration support is challenging as of 2020.
+This repo contains some simple GitHub Actions that I experiment with, for example setting up the Android Emulator on a Windows VM.
