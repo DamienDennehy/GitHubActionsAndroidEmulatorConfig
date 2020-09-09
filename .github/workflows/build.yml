@@ -31,9 +31,6 @@ jobs:
     - name: Install Emulator
       run: powershell -executionpolicy bypass "& ${env:ANDROID_HOME_SYMBOLIC}\tools\bin\sdkmanager --install emulator"
 
-    - name: File Exists
-      run: Test-Path ${env:ANDROID_HOME_SYMBOLIC}\emulator\emulator.exe -PathType Leaf
-
-    # - name: Accel Check
-    #   shell: cmd
-    #   run: powershell -executionpolicy bypass "& ${env:ANDROID_HOME_SYMBOLIC}\emulator\emulator.exe -accel-check"
+    - name: Accel Check
+      shell: cmd
+      run: powershell -executionpolicy bypass "& ${env:ANDROID_HOME_SYMBOLIC}\emulator\emulator -accel-check"
