@@ -22,7 +22,7 @@ jobs:
     runs-on: windows-latest
 
     env:
-        ANDROID_HOME_SYMBOLIC: "C:\android-sdk"
+        ANDROID_HOME_SYMBOLIC: C:\android-sdk
 
     steps:
     - name: Set Symlink Path
