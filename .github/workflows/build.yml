@@ -28,6 +28,9 @@ jobs:
     - name: Set Symlink Path
       run: New-Item -ItemType Junction -Path "${env:ANDROID_HOME_SYMBOLIC}" -Target "${env:ANDROID_HOME}"
 
+    - name: Display Sdk Contents
+      run: dir ${env:ANDROID_HOME_SYMBOLIC}
+
     - name: Install Emulator
       run: ${env:ANDROID_HOME_SYMBOLIC}\tools\bin\sdkmanager --install emulator
 
