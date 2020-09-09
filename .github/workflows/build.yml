@@ -26,7 +26,7 @@ jobs:
 
     steps:
     - name: Set Symlink Path
-      run: mklink /J ${env:ANDROID_HOME_SYMBOLIC} ${env:ANDROID_HOME}
+      run: New-Item -ItemType Junction -Path "${env:ANDROID_HOME_SYMBOLIC}" -Target "${env:ANDROID_HOME}"
 
     - name: Accel Check
       run: ${env:ANDROID_HOME_SYMBOLIC}\emulator\emulator.exe -accel-check
