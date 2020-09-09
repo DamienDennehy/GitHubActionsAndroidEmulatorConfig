@@ -21,7 +21,12 @@ jobs:
 
     runs-on: windows-latest
 
+    env:
+        ANDROID_HOME_SYMBOLIC: "C:\android-sdk"
+
     steps:
+    - name: Set Symlink Path
+      run: mklink /J ${env:ANDROID_HOME_SYMBOLIC} ${env:ANDROID_HOME}
+
     - name: Accel Check
-      run: | 
-        & "${env:ANDROID_HOME}\emulator\emulator.exe" -accel-check
+      run: ${env:ANDROID_HOME_SYMBOLIC}\emulator\emulator.exe -accel-check
