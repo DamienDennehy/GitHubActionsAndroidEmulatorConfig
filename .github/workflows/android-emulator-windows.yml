@@ -23,7 +23,8 @@ jobs:
 
     steps:
     - name: Install Emulator
-      run: powershell -executionpolicy bypass "& '${env:ANDROID_HOME}\tools\bin\sdkmanager' --install emulator"
+      run: powershell -executionpolicy bypass "& ${env:ANDROID_HOME}\tools\bin\sdkmanager --install emulator"
 
     - name: Accel Check
-      run: powershell -executionpolicy bypass "& '${env:ANDROID_HOME}\emulator\emulator' -accel-check"
+      shell: cmd
+      run: powershell -executionpolicy bypass "& ${env:ANDROID_HOME}\emulator\emulator -accel-check"
