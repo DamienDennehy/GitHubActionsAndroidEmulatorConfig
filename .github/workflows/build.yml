@@ -28,6 +28,9 @@ jobs:
     - name: Set Symlink Path
       run: New-Item -ItemType Junction -Path "${env:ANDROID_HOME_SYMBOLIC}" -Target "${env:ANDROID_HOME}"
 
-    - name: Accel Check
-      shell: cmd
-      run: powershell -executionpolicy bypass "& ${env:ANDROID_HOME_SYMBOLIC}\emulator\emulator.exe -accel-check"
+    - name: File Exists
+      run: Test-Path ${env:ANDROID_HOME_SYMBOLIC}\emulator\emulator.exe -PathType Leaf
+
+    # - name: Accel Check
+    #   shell: cmd
+    #   run: powershell -executionpolicy bypass "& ${env:ANDROID_HOME_SYMBOLIC}\emulator\emulator.exe -accel-check"
