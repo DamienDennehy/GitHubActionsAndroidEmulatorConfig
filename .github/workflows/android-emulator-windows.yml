@@ -26,5 +26,4 @@ jobs:
       run: powershell -executionpolicy bypass "& '${env:ANDROID_HOME}\tools\bin\sdkmanager' --install emulator"
 
     - name: Accel Check
-      shell: cmd
       run: powershell -executionpolicy bypass "& '${env:ANDROID_HOME}\emulator\emulator' -accel-check"
