@@ -23,4 +23,4 @@ jobs:
 
     steps:
     - name: Accel Check
-      run: echo ${{env:ANDROID_HOME}}\emulator\emulator.exe
+      run: echo ${env.ANDROID_HOME}
